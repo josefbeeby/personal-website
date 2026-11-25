@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Josef Beeby | Writer / Story Producer</title>
+  <meta name="description" content="Josef Beeby — documentary writer and story producer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- Colours ---------- */
+    :root {
+      --bg: #000000;
+      --text: #ffffff;
+      --muted: #a6a6a6;
+      --faint: #707070;
+      --accent: #e0574a;   /* cinema red */
+      --rule: #3a3a3a;
+    }
+
+    /* ---------- Layout ---------- */
+    :root { --poster-w: 260px; }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+    header { border-bottom: 1px solid var(--rule); }
+    header .wrap { padding-top: 36px; padding-bottom: 28px;
+                   display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 32px; }
+    .site-title { margin: 0; font-size: 1.6rem; font-weight: 600; letter-spacing: -0.01em; }
+    .site-title .sep { color: var(--faint); font-weight: 400; margin: 0 0.35em; }
+    .site-title .tagline { color: var(--muted); }
+    .contact { font-size: 1.25rem; font-weight: 500; color: var(--accent); text-decoration: none; }
+    .contact:hover { text-decoration: underline; }
+
+    .projects {
+      list-style: none;
+      margin: 0;
+      padding: 48px 0 80px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 56px 48px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: var(--poster-w) 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .poster { display: block; aspect-ratio: 2 / 3; overflow: hidden; background: var(--rule); }
+    .poster img { display: block; width: 100%; height: 100%; object-fit: cover; transition: opacity .2s; }
+    .poster[href]:hover img { opacity: .85; }  /* only fade posters that link somewhere */
+
+    /* ---------- Project info: three chunks ---------- */
+    /* Chunk 1: title, format (year), production company */
+    .title   { margin: 0 0 6px; font-size: 1.25rem; font-weight: 700; line-height: 1.2; letter-spacing: -0.01em; }
+    .format  { margin: 0; font-size: 0.95rem; font-weight: 500; }
+    .company { margin: 4px 0 0; font-size: 0.85rem; color: var(--muted); }
+    /* Chunk 2: my role */
+    .role    { font-size: 0.95rem; font-weight: 600; color: var(--accent); }
+    /* Chunk 3: awards */
+    .awards  { list-style: none; padding-left: 0; font-size: 0.78rem; color: var(--faint); line-height: 1.45; }
+    .awards li + li { margin-top: 5px; }
+
+    /* Short divider lines above and below the role (max 300px wide) — the line
+       below always shows, even when there are no awards */
+    .role   { position: relative; margin: 14px 0 0; padding: 14px 0; }
+    .awards { margin: 14px 0 0; }
+    .role::before, .role::after {
+      content: ""; position: absolute; left: 0;
+      width: min(300px, 100%); border-top: 1px solid var(--rule);
+    }
+    .role::before { top: 0; }
+    .role::after  { bottom: 0; }
+
+    /* ---------- Small screens ---------- */
+    @media (max-width: 1080px) {
+      .projects { grid-template-columns: 1fr; gap: 44px; }
+    }
+    @media (max-width: 520px) {
+      .wrap { padding: 0 20px; }
+      .site-title { font-size: 1.3rem; }
+      .site-title .sep { display: none; }
+      .site-title .tagline { display: block; margin-top: 2px; }
+      .contact { font-size: 1.1rem; }
+      .project { grid-template-columns: 42% 1fr; gap: 16px; }
+      .title { font-size: 1.1rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <h1 class="site-title">Josef Beeby<span class="sep">|</span><span class="tagline">Writer / Story Producer</span></h1>
+      <a class="contact" href="mailto:josefbeeby0@gmail.com">josefbeeby0@gmail.com</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!--
+      PROJECTS — newest first.
+      To add a project, copy one <li class="project"> block and put it at the top.
+      Poster link: href on the <a class="poster"> (official site, trailer, etc.).
+    -->
+    <ul class="projects">
+
+      <li class="project">
+        <a class="poster" href="https://www.imdb.com/title/tt39150120/" target="_blank" rel="noopener"><img src="posters/the-ai-doc.jpg" alt="The AI Doc Or: How I Became An Apocaloptimist poster"></a>
+        <div class="info">
+          <h2 class="title">The AI Doc Or: How I Became An Apocaloptimist</h2>
+          <p class="format">Feature Documentary (2026)</p>
+          <p class="company">Focus Features</p>
+          <p class="role">Story Producer</p>
+          <ul class="awards">
+            <li>Official Selection - Sundance Film Festival</li>
+            <li>Official Selection - SXSW Film Festival</li>
+            <li>Official Selection - CPH:DOX</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://www.giveitashotfilm.com/" target="_blank" rel="noopener"><img src="posters/give-it-a-shot.jpg" alt="Give It A Shot poster"></a>
+        <div class="info">
+          <h2 class="title">Give It A Shot</h2>
+          <p class="format">Feature Documentary (2025)</p>
+          <p class="company">Coast To Coast Films</p>
+          <p class="role">Story Producer</p>
+          <ul class="awards">
+            <li>Official Selection - Big Sky Documentary Film Festival</li>
+            <li>Best Science Documentary - Science &amp; Media Awards</li>
+            <li>Jury Award - Best Documentary - Indie Meme Film Festival</li>
+            <li>Official Selection - 23rd Indian Film Festival Stuttgart</li>
+            <li>Official Selection - London Indian Film Festival</li>
+            <li>Official Selection - Doc Lands Documentary Film Festival</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://www.nytimes.com/video/opinion/100000010614232/child-sexual-abuse-destroyed-my-family-heres-what-could-have-helped.html" target="_blank" rel="noopener"><img src="posters/why-didnt-i-kill-my-grandpa.jpg" alt="Why Didn’t I Kill My Grandpa poster"></a>
+        <div class="info">
+          <h2 class="title">Why Didn’t I Kill My Grandpa</h2>
+          <p class="format">Short Documentary (2025)</p>
+          <p class="company">The New York Times Op-Docs</p>
+          <p class="role">Writer</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://unscriptedlivesmovie.com/" target="_blank" rel="noopener"><img src="posters/unscripted-lives.jpg" alt="Unscripted Lives poster"></a>
+        <div class="info">
+          <h2 class="title">Unscripted Lives</h2>
+          <p class="format">Feature Documentary (2023)</p>
+          <p class="company">Beazstly Films LLC</p>
+          <p class="role">Writer / Story Producer</p>
+          <ul class="awards">
+            <li>Official Selection - Breck Film Festival</li>
+            <li>Official Selection - Ramsgate International Film &amp; TV Festival</li>
+            <li>Best Documentary Film - 2025 Catalina Film Festival</li>
+            <li>Official Selection - Omaha Film Festival</li>
+            <li>Official Selection - 2025 Carmel International Film Festival</li>
+            <li>Thrive Award - Most Inspiring and Transformative Film - Cinequest Film Festival</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://designers.ca/the-creative-process/" target="_blank" rel="noopener"><img src="posters/the-creative-process.jpg" alt="The Creative Process poster"></a>
+        <div class="info">
+          <h2 class="title">The Creative Process</h2>
+          <p class="format">Web Series (2023)</p>
+          <p class="company">Associated Designers of Canada</p>
+          <p class="role">Story Editor</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://www.greatphotolovelylife.com/" target="_blank" rel="noopener"><img src="posters/great-photo-lovely-life.jpg" alt="Great Photo, Lovely Life poster"></a>
+        <div class="info">
+          <h2 class="title">Great Photo, Lovely Life</h2>
+          <p class="format">Feature Documentary (2023)</p>
+          <p class="company">Ark Media / HBO</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Best Feature Film - Lower East Side Film Festival</li>
+            <li>Official Selection - SXSW</li>
+            <li>Nominated - Best Writing in a Feature Documentary - Emmys</li>
+            <li>Nominated - Best Feature Documentary - Emmys</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/us-against-everyone.jpg" alt="Us Against Everyone poster"></a>
+        <div class="info">
+          <h2 class="title">Us Against Everyone</h2>
+          <p class="format">One-Act Play (2022)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://www.smithsonianchannel.ca/shows/mysteries-from-above/" target="_blank" rel="noopener"><img src="posters/mysteries-from-above.jpg" alt="Mysteries From Above poster"></a>
+        <div class="info">
+          <h2 class="title">Mysteries From Above</h2>
+          <p class="format">Documentary Series (2022)</p>
+          <p class="company">Blue Ant Media / Smithsonian Channel</p>
+          <p class="role">Writer / Story Editor</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://curiositystream.com/title/series/591" target="_blank" rel="noopener"><img src="posters/history-by-the-numbers.jpg" alt="History By The Numbers poster"></a>
+        <div class="info">
+          <h2 class="title">History By The Numbers</h2>
+          <p class="format">Documentary Series (2021)</p>
+          <p class="company">Blue Ant Media / Curiosity Stream</p>
+          <p class="role">Writer / Story Editor</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/out-of-the-impossible.jpg" alt="Out of the Impossible poster"></a>
+        <div class="info">
+          <h2 class="title">Out of the Impossible</h2>
+          <p class="format">Short Film (2020)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://artsandculture.google.com/story/slogans-for-the-class-of-2030-by-douglas-coupland/vQURjwPHHpa5uw?hl=en" target="_blank" rel="noopener"><img src="posters/slogans-for-the-class-of-2030.jpg" alt="Slogans for the Class of 2030 poster"></a>
+        <div class="info">
+          <h2 class="title">Slogans for the Class of 2030</h2>
+          <p class="format">Short Documentary (2020)</p>
+          <p class="company">Google Arts and Culture</p>
+          <p class="role">Researcher / Writer</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/punchline.jpg" alt="Punchline poster"></a>
+        <div class="info">
+          <h2 class="title">Punchline</h2>
+          <p class="format">Short Film (2019)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Official Selection - ReelWorld Film Festival</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/double-date.jpg" alt="Double Date poster"></a>
+        <div class="info">
+          <h2 class="title">Double Date</h2>
+          <p class="format">Short Film (2019)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Best Romantic Comedy - Austin Micro Short Film Fest</li>
+            <li>Best Short Short - Toronto Short Film Festival</li>
+            <li>Honourable Mention - Berlin Flash Film Festival</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://www.imdb.com/title/tt10440372/" target="_blank" rel="noopener"><img src="posters/the-book-of-dog.jpg" alt="The Book of Dog poster"></a>
+        <div class="info">
+          <h2 class="title">The Book of Dog</h2>
+          <p class="format">Web Series (2019)</p>
+          <p class="company">Topic</p>
+          <p class="role">Researcher / Writer</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://vimeo.com/340087842" target="_blank" rel="noopener"><img src="posters/broken-orchestra.jpg" alt="Broken Orchestra poster"></a>
+        <div class="info">
+          <h2 class="title">Broken Orchestra</h2>
+          <p class="format">Short Documentary (2019)</p>
+          <p class="company">Topic</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Official Selection - Sundance Film Festival</li>
+            <li>Official Selection - SXSW Film Festival</li>
+            <li>Best Documentary Short - Florida Film Festival</li>
+            <li>Official Selection - AFI Docs</li>
+            <li>Special Jury Prize - Indie Street Film Festival</li>
+            <li>Best Short Film - Philadelphia Film Festival</li>
+            <li>Official Selection - DocNYC</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://vimeo.com/292537862" target="_blank" rel="noopener"><img src="posters/my-dead-dads-porno-tapes.jpg" alt="My Dead Dad’s Porno Tapes poster"></a>
+        <div class="info">
+          <h2 class="title">My Dead Dad’s Porno Tapes</h2>
+          <p class="format">Short Documentary (2018)</p>
+          <p class="company">Younger Daughter Films</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Best Documentary Short - Canadian Screen Awards</li>
+            <li>Best Documentary Short - Cinema Eye Honors</li>
+            <li>TIFF Canada’s Top Ten</li>
+            <li>Best Shortform Documentary - Webby Awards</li>
+            <li>Official Selection - Sundance Film Festival</li>
+            <li>Grand Jury Prize, Best Documentary Short - SXSW Film Festival</li>
+            <li>Official Selection - HotDocs International Film Festival</li>
+            <li>Official Selection - Tribeca Film Festival</li>
+            <li>Best Canadian Animation, Vimeo Award - Ottawa International Animation Festival</li>
+            <li>Most Exceptional Short - Interfilm Berlin</li>
+            <li>Best Documentary Short - Oak Cliff Film Festival</li>
+            <li>Best Experimental Short - Santa Fe Independent Film Festival</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/canadiana.jpg" alt="Canadiana poster"></a>
+        <div class="info">
+          <h2 class="title">Canadiana</h2>
+          <p class="format">Web Series (2017–2019)</p>
+          <p class="company">Unlikely Pear Productions</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Nominated - Best Web Series - Canadian Screen Awards</li>
+            <li>Golden Sheaf Award - Yorkton Film Festival</li>
+            <li>Canadian Story Spotlight - TO WebFest</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/the-feed.jpg" alt="The Feed poster"></a>
+        <div class="info">
+          <h2 class="title">The Feed</h2>
+          <p class="format">Short Film (2017)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Best Horror Short - Independent Shorts Awards</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/planet-nature-world.jpg" alt="Planet Nature World poster"></a>
+        <div class="info">
+          <h2 class="title">Planet Nature World</h2>
+          <p class="format">Short Documentary (2016)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Best Mockumentary - Canadian Comedy Film Festival</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster"><img src="posters/hungry-ghosts.jpg" alt="Hungry Ghosts poster"></a>
+        <div class="info">
+          <h2 class="title">Hungry Ghosts</h2>
+          <p class="format">Short Documentary (2015)</p>
+          <p class="company">Independent</p>
+          <p class="role">Writer / Story Producer</p>
+        </div>
+      </li>
+
+      <li class="project">
+        <a class="poster" href="https://vimeo.com/142293358" target="_blank" rel="noopener"><img src="posters/i-thought-i-told-you-to-shut-up.jpg" alt="I Thought I Told You To Shut Up!! poster"></a>
+        <div class="info">
+          <h2 class="title">I Thought I Told You To Shut Up!!</h2>
+          <p class="format">Short Documentary (2015)</p>
+          <p class="company">Milkman Productions</p>
+          <p class="role">Writer</p>
+          <ul class="awards">
+            <li>Official Selection - SXSW Film Festival</li>
+            <li>Best short - Palm Beach International Film Festival</li>
+            <li>Honourable Mention - DOXA Documentary Film Festival</li>
+            <li>Best documentary short - Arizona International Film Festival</li>
+            <li>National Screen Institute Blue Ant Media Award for Best Documentary</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+</body>
+</html>
